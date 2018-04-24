@@ -150,7 +150,7 @@ public class LinkedList {
     /**
      * @return
      */
-    public int removeFirst()thtrjhtrdhjth
+    public int removeFirst()
     {
         if (this.head == null)
         {
