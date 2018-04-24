@@ -79,8 +79,8 @@ public class LinkedList {
         }
     }
 
-    /*
-     * PRINT LINKEDLIST METHOD
+    /**
+     * Print LinkedList Method
      */
     public void print()
     {
@@ -101,12 +101,56 @@ public class LinkedList {
         System.out.println();
     }
 
-    /*
+        /*
         public void insert(int value, int position)
         {
         }
         */
-    public Node removeFirst()
+
+    /**
+     * @param index
+     *
+     * @return
+     */
+    public int removeAt(int index)
+    {
+        if (this.head == null)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index < 0)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        Node trailer = null;
+        Node traveler = this.head;
+        int position = 0;
+        while (traveler != null && position != index)
+        {
+            trailer = traveler;
+            traveler = traveler.next;
+            ++position;
+        }
+        if (traveler == null)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        if (trailer == null)
+        {
+            int value = this.head.value;
+            this.head = this.head.next;
+            return value;
+            // return this.removeFirst();
+        }
+        int value = traveler.value;
+        trailer.next = traveler.next;
+        return value;
+    }
+
+    /**
+     * @return
+     */
+    public int removeFirst()thtrjhtrdhjth
     {
         if (this.head == null)
         {
@@ -118,26 +162,32 @@ public class LinkedList {
          * this.head passes the value of the "next"
          * from the first Node to removedNode local var
          */
-        Node removedNode = this.head;
+//        Node removedNode = this.head;
         /**
          * this takes the value of head from the 2nd Node
          * and makes it the value of Head for the Second Node?
          */
-        this.head = this.head.next;
+//        this.head = this.head.next;
         /**
          * this make the value of Next from the First node
          * and makes its Next Null
          * thus severing it completely from the Linked List
          */
-        removedNode.next = null;
-        return removedNode;
+//        removedNode.next = null;
+//        return removedNode;
         //Node removedNode = this.head;
-//        int value = this.head.value;
-//        this.head = this.head.next;
+        int value = this.head.value;
+        this.head = this.head.next;
         //return removedNode.value;
-//        return value;
+        return value;
     }
+    /*INSERT
+     *
+     */
 
+    /**
+     * @return
+     */
     public int removeLast()
     {
         if (this.head == null)
@@ -170,10 +220,10 @@ public class LinkedList {
         secondToLastNode.next = null;
         return value;
     }
-    /*INSERT
-     *
-     */
 
+    /**
+     * @return
+     */
     public int removedLast2()
     {
         if (this.head == null)
@@ -199,7 +249,33 @@ public class LinkedList {
             return value;
         }
     }
+
+
+
+    /* Inserts a new node after the given prev_node. */
+  /*  public void insertAfter(Node prev_node, int new_data)
+    {
+        /* 1. Check if the given Node is null */
+  /*      if (prev_node == null)
+        {
+            System.out.println("The given previous node cannot be null");
+            return;
+        }
+
+        /* 2 & 3: Allocate the Node &
+                  Put in the data*/
+   /*     Node new_node = new Node(new_data);
+
+        /* 4. Make next of new Node as next of prev_node */
+     /*   new_node.next = prev_node.next;
+
+        /* 5. make next of prev_node as new_node */
+   /*     prev_node.next = new_node;
+    }
+
+*/
 }
+
 
 
 /*

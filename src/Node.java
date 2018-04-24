@@ -9,10 +9,14 @@
  * NODE CLASS
  */
 
+
 public class Node {
     Node next;
     int value;
 
+    /**
+     * @param value
+     */
     public Node(int value)
     {
         this.value = value;

@@ -36,24 +36,29 @@ public class Main {
         // Node temp = new Node(1); *deprecated*
         ll.print();
         ll.append(111);
+        System.out.println("* CREATED FIRST NODE *");
         ll.print();
+        System.out.println();
         ll.append(222);
         ll.append(333);
+        System.out.println("* Finished appending and creating the LinkedList. 111,222,333 *");
         ll.print();
+        System.out.println();
+        System.out.println("* Prepend Method (added 444 to beginning) *");
         ll.prepend(444);
         ll.print();
-        // ll.insert(7); *for insert assignment*
+        System.out.println();
+        System.out.println("* REMOVE AT INDEX 0 *");
+        ll.removeAt(0);
+        //ll.insertAfter(,555);
+        ll.print();
+        System.out.println();
+        System.out.println("* REMOVE FIRST *");
         ll.removeFirst();
         ll.print();
+        System.out.println();
+        System.out.println("* REMOVE LAST *");
         ll.removeLast();
         ll.print();
-	    
-		
-		/*
-		System.out.print("\nI changed the output above to reflect the value"
-				+ " contained in the node\nand what the NEXT of that node is pointing towards.\n"
-				+ "\nThis demonstrates that I have created a linked list and that each Node"
-				+ "\is pointing to the next and that the last node is pointing to null.");
-				*/
     }
 }

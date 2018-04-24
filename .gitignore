@@ -2,7 +2,6 @@
 ### Java template
 # Compiled class file
 .idea/
-.settings/
 *.class
 
 # Log file
