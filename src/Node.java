@@ -25,6 +25,7 @@ public class Node<T> {
      * Value only constructor.
      *
      * @param value
+     *     <T>
      */
     public Node(T value)
     {
@@ -33,7 +34,14 @@ public class Node<T> {
         // this(value, null);
     }
 
-    // Optional
+    /**
+     * Optional all value constructor.
+     *
+     * @param value
+     *     <T>
+     * @param next
+     *     Node<T>
+     */
     public Node(T value, Node<T> next)
     {
         this.value = value;
@@ -41,7 +49,7 @@ public class Node<T> {
     }
 
     /**
-     * @return
+     * @return Node<T>
      */
     public Node<T> getNext()
     {
@@ -50,8 +58,9 @@ public class Node<T> {
 
     /**
      * @param next
+     *     Node<T>
      */
-    public void setNext(Node next)
+    public void setNext(Node<T> next)
     {
         this.next = next;
     }
@@ -59,6 +68,10 @@ public class Node<T> {
      * @return
      */
     // Begin Getters and Setters
+
+    /**
+     * @return <T>
+     */
     public T getValue()
     {
         return this.value;
@@ -66,6 +79,7 @@ public class Node<T> {
 
     /**
      * @param value
+     *     T
      */
     public void setValue(T value)
     {
