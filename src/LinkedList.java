@@ -7,6 +7,11 @@
 
 /**
  * linkedlist class
+ * <p>
+ * Jonathan, This should be a T for type because it is a type
+ * but I understand you chose L because it makes sense to you at this point
+ * If Anything, for the future, use S Since this is a "second"
+ * and this would keep better in naming conventions
  */
 public class LinkedList<L> {
     private Node<L> head;
@@ -21,9 +26,9 @@ public class LinkedList<L> {
 
     /**
      * @param value
-     *     int Passes (Value) into append method | Main property.
+     *     <L> Passes (Value) into append method | Main property.
      */
-    public void append(int value)
+    public void append(L value)
     {
         /*
          * If the list is empty set the head to new mode
@@ -31,28 +36,28 @@ public class LinkedList<L> {
         if (this.head == null)
         {
             // Creates a new node and stuffs Value into it
-            this.head = new Node(value);
+            this.head = new Node<>(value);
             return;
         }
-        Node traveler = getLast();
+        Node<L> traveler = getLast();
 
         /*
          * At this point, traveler points to last node
          */
-        traveler.setNext(new Node(value));
+        traveler.setNext(new Node<>(value));
     }
 
     /**
      * Got last linked node.
      *
-     * @return Node|null Returns Node or NULL.
+     * @return Node<L>|null Returns Node or NULL.
      */
-    public Node getLast()
+    public Node<L> getLast()
     {
         /*
          * Finds the last Node
          */
-        Node last = this.head;
+        Node<L> last = this.head;
         while (last.getNext() != null)
         {
             last = last.getNext();
@@ -64,9 +69,9 @@ public class LinkedList<L> {
      * PREPEND METHOD
      *
      * @param value
-     *     Value for the node.
+     *     <L> Value for the node.
      */
-    public void prepend(int value)
+    public void prepend(L value)
     {
         if (this.head == null) // Checks to see if its the only node
         {
@@ -84,7 +89,7 @@ public class LinkedList<L> {
      */
     public void print()
     {
-        Node traveler = this.head;
+        Node<L> traveler = this.head;
         while (traveler != null)
         {
             System.out.print("/Value(" + traveler.getValue() + ")--->");
@@ -109,10 +114,11 @@ public class LinkedList<L> {
 
     /**
      * @param index
+     *     int
      *
-     * @return
+     * @return <L>
      */
-    public int removeAt(int index)
+    public L removeAt(int index)
     {
         if (this.head == null)
         {
@@ -122,8 +128,8 @@ public class LinkedList<L> {
         {
             throw new IndexOutOfBoundsException();
         }
-        Node trailer = null;
-        Node traveler = this.head;
+        Node<L> trailer = null;
+        Node<L> traveler = this.head;
         int position = 0;
         while (traveler != null && position != index)
         {
@@ -137,38 +143,38 @@ public class LinkedList<L> {
         }
         if (trailer == null)
         {
-            int value = this.head.value;
+            L value = this.head.value;
             this.head = this.head.next;
             return value;
             // return this.removeFirst();
         }
-        int value = traveler.value;
+        L value = traveler.value;
         trailer.next = traveler.next;
         return value;
     }
 
     /**
-     * @return
+     * @return <L>
      */
-    public int removeFirst()
+    public L removeFirst()
     {
         if (this.head == null)
         {
             throw new IndexOutOfBoundsException();
         }
-        /**
+        /*
          * this will create a new local var
          * of the Node type
          * this.head passes the value of the "next"
          * from the first Node to removedNode local var
          */
-        Node removedNode = this.head;
-        /**
+        Node<L> removedNode = this.head;
+        /*
          * this takes the value of head from the 2nd Node
          * and makes it the value of Head for the Second Node?
          */
         this.head = this.head.next;
-        /**
+        /*
          * this make the value of Next from the First node
          * and makes its Next Null
          * thus severing it completely from the Linked List
@@ -186,9 +192,9 @@ public class LinkedList<L> {
      */
 
     /**
-     * @return
+     * @return <L>
      */
-    public int removeLast()
+    public L removeLast()
     {
         if (this.head == null)
         {
@@ -204,34 +210,34 @@ public class LinkedList<L> {
             return this.removeFirst();
         }
         // Find second to last Node
-        Node traveller = this.head;
+        Node<L> traveller = this.head;
         while (traveller.next.next != null)
         {
             traveller = traveller.next;
         }
-        Node secondToLastNode = traveller;
-        Node lastNode = traveller.next;
+        Node<L> secondToLastNode = traveller;
+        Node<L> lastNode = traveller.next;
 
         /*
          Remove pointer from second to last Node,
          to last Node
          */
-        int value = lastNode.value;
+        L value = lastNode.value;
         secondToLastNode.next = null;
         return value;
     }
 
     /**
-     * @return
+     * @return <L>
      */
-    public int removedLast2()
+    public L removedLast2()
     {
         if (this.head == null)
         {
             throw new IndexOutOfBoundsException();
         }
-        Node traveler = this.head;
-        Node trailer = null;
+        Node<L> traveler = this.head;
+        Node<L> trailer = null;
         while (traveler.next != null)
         {
             trailer = traveler;
@@ -239,12 +245,12 @@ public class LinkedList<L> {
         }
         if (trailer == null)
         {
-            int value = traveler.value;
+            L value = traveler.value;
             this.head = null;
             return value;
         } else
         {
-            int value = traveler.value;
+            L value = traveler.value;
             trailer.next = null;
             return value;
         }
