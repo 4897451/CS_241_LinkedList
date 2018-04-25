@@ -30,13 +30,12 @@
  */
 
 /**
- *
+ * Project main class.
  */
 public class Main {
     public static void main(String[] args)
     {
-        LinkedList ll = new LinkedList();
-        // Node temp = new Node(1); *deprecated*
+        LinkedList<Integer> ll = new LinkedList<>();
         ll.print();
         ll.append(111);
         System.out.println("* CREATED FIRST NODE *");

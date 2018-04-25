@@ -14,6 +14,16 @@ public class Node<T> {
     T value;
 
     /**
+     * Default values constructor.
+     */
+    public Node()
+    {
+        this(null, null);
+    }
+
+    /**
+     * Value only constructor.
+     *
      * @param value
      */
     public Node(T value)
@@ -45,7 +55,6 @@ public class Node<T> {
     {
         this.next = next;
     }
-
     /**
      * @return
      */
