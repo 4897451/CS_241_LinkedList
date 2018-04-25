@@ -8,8 +8,8 @@
 /**
  * linkedlist class
  */
-public class LinkedList {
-    private Node head;
+public class LinkedList<L> {
+    private Node<L> head;
 
     /**
      * Constructor
