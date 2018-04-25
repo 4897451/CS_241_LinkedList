@@ -15,7 +15,7 @@ public class Node<T> {
     T value;
 
     /**
-     * Default values constructor.
+     * Default value constructor.
      */
     public Node()
     {
