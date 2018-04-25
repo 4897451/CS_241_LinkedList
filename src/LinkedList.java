@@ -13,6 +13,7 @@
  * If Anything, for the future, use S Since this is a "second"
  * and this would keep better in naming conventions
  */
+@SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
     private Node<L> head;
 
@@ -78,9 +79,15 @@ public class LinkedList<L> {
             this.append(value);
         } else
         {
-            Node temp = this.head;
-            this.head = new Node(value);
-            this.head.setNext(temp);
+            // This is a way to increase efficiency of my code.
+            // Instead of create a temporary local variable to assign to the new
+            // node's next you can do it in a single step by using the other node constructor.
+            // Instead I didn't need to create an empty node
+            // and assign the value of head to next and then discard
+            // the temporary pointer to the old node.
+//            Node<L> temp = this.head;
+            this.head = new Node<>(value, this.head);
+//            this.head.setNext(temp);
         }
     }
 
