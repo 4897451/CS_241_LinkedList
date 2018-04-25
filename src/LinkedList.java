@@ -162,24 +162,24 @@ public class LinkedList {
          * this.head passes the value of the "next"
          * from the first Node to removedNode local var
          */
-//        Node removedNode = this.head;
+        Node removedNode = this.head;
         /**
          * this takes the value of head from the 2nd Node
          * and makes it the value of Head for the Second Node?
          */
-//        this.head = this.head.next;
+        this.head = this.head.next;
         /**
          * this make the value of Next from the First node
          * and makes its Next Null
          * thus severing it completely from the Linked List
          */
-//        removedNode.next = null;
+        removedNode.next = null;
 //        return removedNode;
-        //Node removedNode = this.head;
-        int value = this.head.value;
-        this.head = this.head.next;
-        //return removedNode.value;
-        return value;
+        // Node removedNode = this.head;
+//        int value = this.head.value;
+//        this.head = this.head.next;
+        return removedNode.value;
+//        return value;
     }
     /*INSERT
      *

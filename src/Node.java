@@ -9,15 +9,14 @@
  * NODE CLASS
  */
 
-
-public class Node {
-    Node next;
-    int value;
+public class Node<T> {
+    Node<T> next;
+    T value;
 
     /**
      * @param value
      */
-    public Node(int value)
+    public Node(T value)
     {
         this.value = value;
         this.next = null;
@@ -25,7 +24,7 @@ public class Node {
     }
 
     // Optional
-    public Node(int value, Node next)
+    public Node(T value, Node<T> next)
     {
         this.value = value;
         this.next = next;
@@ -34,7 +33,7 @@ public class Node {
     /**
      * @return
      */
-    public Node getNext()
+    public Node<T> getNext()
     {
         return this.next;
     }
@@ -51,7 +50,7 @@ public class Node {
      * @return
      */
     // Begin Getters and Setters
-    public int getValue()
+    public T getValue()
     {
         return this.value;
     }
@@ -59,7 +58,7 @@ public class Node {
     /**
      * @param value
      */
-    public void setValue(int value)
+    public void setValue(T value)
     {
         this.value = value;
     }
