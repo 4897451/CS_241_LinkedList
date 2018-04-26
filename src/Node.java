@@ -65,9 +65,6 @@ public class Node<T> {
     {
         this.next = next;
     }
-    /**
-     * @return
-     */
     // Begin Getters and Setters
 
     /**
