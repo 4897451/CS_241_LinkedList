@@ -85,9 +85,9 @@ public class LinkedList<L> {
             // Instead I didn't need to create an empty node
             // and assign the value of head to next and then discard
             // the temporary pointer to the old node.
-//            Node<L> temp = this.head;
+//            Node<L> temp = this.head; *Deprecated*
             this.head = new Node<>(value, this.head);
-//            this.head.setNext(temp);
+//            this.head.setNext(temp); *Deprecated*
         }
     }
 
@@ -182,7 +182,7 @@ public class LinkedList<L> {
          */
         this.head = this.head.next;
         /*
-         * this make the value of Next from the First node
+         * this takes the value of Next from the First node
          * and makes its Next Null
          * thus severing it completely from the Linked List
          */
