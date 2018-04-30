@@ -52,7 +52,6 @@ public class Main {
         System.out.println();
         System.out.println("* REMOVE AT INDEX 0 *");
         ll.removeAt(0);
-        //ll.insertAfter(,555);
         ll.print();
         System.out.println();
         System.out.println("* REMOVE FIRST *");
