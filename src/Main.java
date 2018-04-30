@@ -69,15 +69,17 @@ public class Main {
         /**
          * Random for insert method
          */
-        System.out.println("* STARTING RANDOM *");
+        System.out.println("\n* STARTING RANDOM *\n");
         Random r = new Random();
         for (int i = 0; i < 10; i++)
         {
             int value = r.nextInt(10);
             int position = r.nextInt(i + 1);
+            ll.print();
             System.out.println("Inserting " + value + " at " + position);
             ll.print();
             ll.insert(value, position);
+            // LL turns into null after 1st insertion
             ll.print();
         }
     }
