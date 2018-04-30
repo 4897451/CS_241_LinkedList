@@ -29,6 +29,8 @@
  * MAIN METHOD
  */
 
+import java.util.Random;
+
 /**
  * Project main class.
  */
@@ -39,6 +41,17 @@ public class Main {
         /**
          * Random for insert method
          */
+        Random r = new Random();
+        for (int i = 0; i < 10; i++)
+        {
+            int value = r.nextInt(10);
+            int position = r.nextInt(i + 1);
+            System.out.println("Inserting " + value + " at " + position);
+            ll.insert(value, position);
+            ll.print();
+        }
+
+
         ll.print();
         ll.append(111);
         System.out.println("* CREATED FIRST NODE *");
