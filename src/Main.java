@@ -36,6 +36,9 @@ public class Main {
     public static void main(String[] args)
     {
         LinkedList<Integer> ll = new LinkedList<>();
+        /**
+         * Random for insert method
+         */
         ll.print();
         ll.append(111);
         System.out.println("* CREATED FIRST NODE *");
