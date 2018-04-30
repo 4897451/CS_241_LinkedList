@@ -50,8 +50,6 @@ public class Main {
             ll.insert(value, position);
             ll.print();
         }
-
-
         ll.print();
         ll.append(111);
         System.out.println("* CREATED FIRST NODE *");
