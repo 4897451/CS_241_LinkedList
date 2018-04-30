@@ -119,6 +119,42 @@ public class LinkedList<L> {
         }
         */
 
+
+    /**
+     * @return <L>
+     */
+    public L removeFirst()
+    {
+        if (this.head == null)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        /*
+         * this will create a new local var
+         * of the Node type
+         * this.head passes the value of the "next"
+         * from the first Node to removedNode local var
+         */
+        Node<L> removedNode = this.head;
+        /*
+         * this takes the value of head from the 2nd Node
+         * and makes it the value of Head for the Second Node?
+         */
+        this.head = this.head.next;
+        /*
+         * this takes the value of Next from the First node
+         * and makes its Next Null
+         * thus severing it completely from the Linked List
+         */
+        removedNode.next = null;
+//        return removedNode;
+        // Node removedNode = this.head;
+//        int value = this.head.value;
+//        this.head = this.head.next;
+        return removedNode.value;
+//        return value;
+    }
+
     /**
      * @param index
      *     int
@@ -160,43 +196,6 @@ public class LinkedList<L> {
         return value;
     }
 
-    /**
-     * @return <L>
-     */
-    public L removeFirst()
-    {
-        if (this.head == null)
-        {
-            throw new IndexOutOfBoundsException();
-        }
-        /*
-         * this will create a new local var
-         * of the Node type
-         * this.head passes the value of the "next"
-         * from the first Node to removedNode local var
-         */
-        Node<L> removedNode = this.head;
-        /*
-         * this takes the value of head from the 2nd Node
-         * and makes it the value of Head for the Second Node?
-         */
-        this.head = this.head.next;
-        /*
-         * this takes the value of Next from the First node
-         * and makes its Next Null
-         * thus severing it completely from the Linked List
-         */
-        removedNode.next = null;
-//        return removedNode;
-        // Node removedNode = this.head;
-//        int value = this.head.value;
-//        this.head = this.head.next;
-        return removedNode.value;
-//        return value;
-    }
-    /*INSERT
-     *
-     */
 
     /**
      * @return <L>

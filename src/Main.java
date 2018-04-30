@@ -38,7 +38,6 @@ public class Main {
     public static void main(String[] args)
     {
         LinkedList<Integer> ll = new LinkedList<>();
-
         ll.print();
         ll.append(111);
         System.out.println("* CREATED FIRST NODE *");
@@ -55,8 +54,18 @@ public class Main {
         System.out.println();
         System.out.println("* REMOVE AT INDEX 0 *");
         ll.removeAt(0);
-        //ll.insertAfter(,555);
         ll.print();
+        System.out.println();
+        System.out.println("* REMOVE FIRST *");
+        ll.removeFirst();
+        ll.print();
+        System.out.println();
+        System.out.println("* REMOVE LAST *");
+        ll.removeLast();
+        ll.print();
+        //ll.insert(1,555);
+        //System.out.println("* INSERT AT INDEX 1 *");
+
         /**
          * Random for insert method
          */
@@ -66,16 +75,9 @@ public class Main {
             int value = r.nextInt(10);
             int position = r.nextInt(i + 1);
             System.out.println("Inserting " + value + " at " + position);
+            ll.print();
             ll.insert(value, position);
             ll.print();
         }
-        System.out.println();
-        System.out.println("* REMOVE FIRST *");
-        ll.removeFirst();
-        ll.print();
-        System.out.println();
-        System.out.println("* REMOVE LAST *");
-        ll.removeLast();
-        ll.print();
     }
 }
