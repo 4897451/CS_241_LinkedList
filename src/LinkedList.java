@@ -277,7 +277,7 @@ public class LinkedList<L> {
         }
         if (index < 0)
         {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("INDEX IS < 0. ");
         }
         Node<L> trailer = null;
         Node<L> traveler = this.head;

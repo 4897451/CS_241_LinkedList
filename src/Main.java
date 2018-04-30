@@ -69,6 +69,7 @@ public class Main {
         /**
          * Random for insert method
          */
+        System.out.println("* STARTING RANDOM *");
         Random r = new Random();
         for (int i = 0; i < 10; i++)
         {
