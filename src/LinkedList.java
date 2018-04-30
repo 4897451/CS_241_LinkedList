@@ -273,7 +273,8 @@ public class LinkedList<L> {
     {
         if (this.head == null)
         {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("I'm still not sure where I'm going" + " wrong in this method.");
+
         }
         if (index < 0)
         {
