@@ -262,4 +262,44 @@ public class LinkedList<L> {
             return value;
         }
     }
+
+    /**
+     * @param index
+     *     int
+     *
+     * @return <L>
+     */
+    public L insert(L value, int index)
+    {
+        if (this.head == null)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index < 0)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<L> trailer = null;
+        Node<L> traveler = this.head;
+        int position = 0;
+        while (traveler != null && position != index)
+        {
+            trailer = traveler;
+            traveler = traveler.next;
+            ++position;
+        }
+        if (traveler == null)
+        {
+            throw new IndexOutOfBoundsException();
+        }
+        if (trailer == null)
+        {
+            value = this.head.value;
+            this.head = this.head.next;
+            return value;
+        }
+        value = traveler.value;
+        trailer.next = traveler.next;
+        return value;
+    }
 }
