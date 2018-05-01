@@ -12,7 +12,7 @@
  * but I understand you chose L because it makes sense to you at this point
  * If Anything, for the future, use S Since this is a "second"
  * and this would keep better in naming conventions
- * * comment requested  by me for elucidation on Generic Types - good form *
+ * * comment requested by me for elucidation on Generic Types - good form *
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
@@ -29,6 +29,7 @@ public class LinkedList<L> {
      * @param value <L> Passes (Value) into append method | Main property.
      */
     public void append(L value) {
+
         /*
          * If the list is empty set the head to new mode
          */
@@ -51,6 +52,7 @@ public class LinkedList<L> {
      * @return Node<L>|null Returns Node or NULL.
      */
     public Node<L> getLast() {
+
         /*
          * Finds the last Node
          */
@@ -90,28 +92,18 @@ public class LinkedList<L> {
         Node<L> traveler = this.head;
         while (traveler != null) {
             System.out.print("Value(" + traveler.getValue() + ")--->");
-            //System.out.print(traveler); *test* <-Traveler at this point
+            //System.out.print(traveler); //*test* <-Traveler at this point
 
-            /*
-             * This extra line below will output a hash of the memory
-             * address of the nodes (heads)
-             */
             System.out.print("");
             traveler = traveler.getNext();
             if (traveler == null)
             {
                 System.out.print(traveler);
             }
-            //System.out.print(traveler); *test* <-Traveler at this point
+            //System.out.print(traveler); //*test* <-Traveler at this point
         }
         System.out.println();
     }
-
-        /*
-        public void insert(int value, int position)
-        {
-        }
-        */
 
     /**
      * @return <L>
@@ -296,9 +288,5 @@ public class LinkedList<L> {
 
     public static void insertRandomizer()
     {
-
-
-
-
     }
 }
