@@ -89,15 +89,19 @@ public class LinkedList<L> {
     public void print() {
         Node<L> traveler = this.head;
         while (traveler != null) {
-            System.out.print("/Value(" + traveler.getValue() + ")--->");
+            System.out.print("Value(" + traveler.getValue() + ")--->");
             //System.out.print(traveler); *test* <-Traveler at this point
 
             /*
              * This extra line below will output a hash of the memory
              * address of the nodes (heads)
              */
-            System.out.print(traveler.getNext() + "");
+            System.out.print("");
             traveler = traveler.getNext();
+            if (traveler == null)
+            {
+                System.out.print(traveler);
+            }
             //System.out.print(traveler); *test* <-Traveler at this point
         }
         System.out.println();
