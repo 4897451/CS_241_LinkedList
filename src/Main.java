@@ -70,29 +70,25 @@ public class Main {
         ll.removeLast();
         System.out.println("\nLinkedList length = " + ll.len());
         ll.print();
-        //ll.insert(1,555);
-        //System.out.println("* INSERT AT INDEX 1 *");
 
         /*
-         * Random for insert method
+         * Random for insertAt() method
          */
         System.out.println("\n* STARTING RANDOM INSERT AT INDEX *\n");
-        ll.print();
 
         Random r = new Random();
         for (int i = 0; i < 3; i++)
         {
-            System.out.println("\nLinkedList length = " + ll.len());
+            System.out.println("LinkedList length = " + ll.len() + "\n");
             int value = r.nextInt(10);
             int position = r.nextInt(i + 1);
-            ll.print();
+            //ll.print();
             System.out.println("Inserting " + value + " at " + position);
             ll.print();
             /**
              * Calling insertAt() method
              */
-            ll.insert(value, position);
-            // LL turns into null after 1st insertion
+            ll.insertAt(value, position);
             ll.print();
         }
         System.out.println("\nLinkedList length = " + ll.len());

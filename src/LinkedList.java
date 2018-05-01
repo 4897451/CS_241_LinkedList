@@ -236,7 +236,8 @@ public class LinkedList<L> {
      * @param value int
      * @param index int
      */
-    public void insert(L value, int index) {
+    public void insertAt(L value, int index)
+    {
         int length = this.len();
         // Check for invalid conditions.
         if (0 == length) {
