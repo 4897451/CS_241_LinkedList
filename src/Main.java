@@ -93,6 +93,6 @@ public class Main {
             ll.insertAt(value, position);
             ll.print();
         }
-        System.out.println("\nLinkedList length = " + ll.length());
+        System.out.println("LinkedList length = " + ll.length());
     }
 }
