@@ -274,31 +274,6 @@ public class LinkedList<L> {
             // that was at this position.
             current.next = new Node<>(value, nextNode);
         }
-        /**
-         * Deprecated Code - original stab at insertAt() method
-         */
-//        Node<L> trailer = null;
-//        Node<L> traveler = this.head;
-//        int position = 0;
-//        while (traveler != null && position <= index)
-//        {
-//            trailer = traveler;
-//            traveler = traveler.next;
-//            ++position;
-//        }
-//        if (traveler == null)
-//        {
-//            throw new IndexOutOfBoundsException();
-//        }
-//        if (trailer == null)
-//        {
-//            value = this.head.value;
-//            this.head = this.head.next;
-//            return value;
-//        }
-//        value = traveler.value;
-//        trailer.next = traveler.next;
-//        return value;
     }
 
     /**
