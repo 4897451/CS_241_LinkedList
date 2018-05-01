@@ -82,9 +82,7 @@ public class Main {
             System.out.println("LinkedList length = " + ll.len() + "\n");
             int value = r.nextInt(10);
             int position = r.nextInt(i + 1);
-            //ll.print();
             System.out.println("Inserting " + value + " at " + position);
-            //ll.print();
             /**
              * Calling insertAt() method
              */
