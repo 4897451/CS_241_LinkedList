@@ -75,6 +75,9 @@ public class Main {
          * Random for insertAt() method
          */
         System.out.println("\n* STARTING RANDOM INSERT AT INDEX *\n");
+        /**
+         * Stub for future randomizer method
+         */
         ll.insertRandomizer();
 
         Random r = new Random();
