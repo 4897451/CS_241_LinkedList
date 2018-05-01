@@ -84,7 +84,7 @@ public class Main {
             int position = r.nextInt(i + 1);
             //ll.print();
             System.out.println("Inserting " + value + " at " + position);
-            ll.print();
+            //ll.print();
             /**
              * Calling insertAt() method
              */
