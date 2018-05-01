@@ -258,7 +258,7 @@ public class LinkedList<L> {
         if (0 == index) {
             this.prepend(value);
         } else {
-            // Need to find the Node before the index
+            // Needs to find the Node before the index
             // so new Node can be added to it's next pointer.
             --index;
             Node<L> current = this.head;
@@ -270,10 +270,13 @@ public class LinkedList<L> {
                 nextNode = nextNode.next;
                 ++position;
             }
-            // Insert new Node value and link it with the old node
+            // Inserts new Node value and link it with the old node
             // that was at this position.
             current.next = new Node<>(value, nextNode);
         }
+        /**
+         * Deprecated Code - original stab at insertAt() method
+         */
 //        Node<L> trailer = null;
 //        Node<L> traveler = this.head;
 //        int position = 0;

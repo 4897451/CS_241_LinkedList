@@ -75,6 +75,7 @@ public class Main {
          * Random for insertAt() method
          */
         System.out.println("\n* STARTING RANDOM INSERT AT INDEX *\n");
+        ll.insert();
 
         Random r = new Random();
         for (int i = 0; i < 3; i++)
