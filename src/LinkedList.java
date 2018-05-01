@@ -296,5 +296,9 @@ public class LinkedList<L> {
 
     public static void insertRandomizer()
     {
+
+
+
+
     }
 }
