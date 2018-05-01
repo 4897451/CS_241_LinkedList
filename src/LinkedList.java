@@ -293,4 +293,8 @@ public class LinkedList<L> {
         }
         return count;
     }
+
+    public static void insertRandomizer()
+    {
+    }
 }
