@@ -239,7 +239,7 @@ public class LinkedList<L> {
      */
     public void insertAt(L value, int index)
     {
-        int length = this.len();
+        int length = this.length();
         // Check for invalid conditions.
         if (0 == length) {
             throw new IndexOutOfBoundsException("Linked list is empty");
@@ -299,7 +299,8 @@ public class LinkedList<L> {
      *
      * @return int
      */
-    public int len() {
+    public int length()
+    {
         int count = 0;
         if (this.head != null) {
             Node<L> current = this.head;
