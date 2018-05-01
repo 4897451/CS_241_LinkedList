@@ -12,6 +12,7 @@
  * but I understand you chose L because it makes sense to you at this point
  * If Anything, for the future, use S Since this is a "second"
  * and this would keep better in naming conventions
+ * * comment for elucidation on Generic Types - good form
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
@@ -253,7 +254,8 @@ public class LinkedList<L> {
         if (0 == index) {
             this.prepend(value);
         } else {
-            // Need to find the Node before the index so new Node can be added to it's next pointer.
+            // Need to find the Node before the index
+            // so new Node can be added to it's next pointer.
             --index;
             Node<L> current = this.head;
             Node<L> nextNode = this.head.next;
@@ -264,7 +266,8 @@ public class LinkedList<L> {
                 nextNode = nextNode.next;
                 ++position;
             }
-            // Insert new Node value and link it with the old node that was at this position.
+            // Insert new Node value and link it with the old node
+            // that was at this position.
             current.next = new Node<>(value, nextNode);
         }
 //        Node<L> trailer = null;
