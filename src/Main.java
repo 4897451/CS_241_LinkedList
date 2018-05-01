@@ -66,13 +66,15 @@ public class Main {
         //ll.insert(1,555);
         //System.out.println("* INSERT AT INDEX 1 *");
 
-        /**
+        /*
          * Random for insert method
          */
         System.out.println("\n* STARTING RANDOM *\n");
+        ll.print();
         Random r = new Random();
         for (int i = 0; i < 10; i++)
         {
+            System.out.println("\nLinkedList length = " + ll.len());
             int value = r.nextInt(10);
             int position = r.nextInt(i + 1);
             ll.print();

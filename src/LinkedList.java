@@ -20,22 +20,18 @@ public class LinkedList<L> {
     /**
      * Constructor
      */
-    public LinkedList()
-    {
+    public LinkedList() {
         this.head = null;
     }
 
     /**
-     * @param value
-     *     <L> Passes (Value) into append method | Main property.
+     * @param value <L> Passes (Value) into append method | Main property.
      */
-    public void append(L value)
-    {
+    public void append(L value) {
         /*
          * If the list is empty set the head to new mode
          */
-        if (this.head == null)
-        {
+        if (this.head == null) {
             // Creates a new node and stuffs Value into it
             this.head = new Node<>(value);
             return;
@@ -53,14 +49,12 @@ public class LinkedList<L> {
      *
      * @return Node<L>|null Returns Node or NULL.
      */
-    public Node<L> getLast()
-    {
+    public Node<L> getLast() {
         /*
          * Finds the last Node
          */
         Node<L> last = this.head;
-        while (last.getNext() != null)
-        {
+        while (last.getNext() != null) {
             last = last.getNext();
         }
         return last;
@@ -69,16 +63,13 @@ public class LinkedList<L> {
     /**
      * PREPEND METHOD
      *
-     * @param value
-     *     <L> Value for the node.
+     * @param value <L> Value for the node.
      */
-    public void prepend(L value)
-    {
+    public void prepend(L value) {
         if (this.head == null) // Checks to see if its the only node
         {
             this.append(value);
-        } else
-        {
+        } else {
             // This is a way to increase efficiency of my code.
             // Instead of create a temporary local variable to assign to the new
             // node's next you can do it in a single step by using the other node constructor.
@@ -94,11 +85,9 @@ public class LinkedList<L> {
     /**
      * Print LinkedList Method
      */
-    public void print()
-    {
+    public void print() {
         Node<L> traveler = this.head;
-        while (traveler != null)
-        {
+        while (traveler != null) {
             System.out.print("/Value(" + traveler.getValue() + ")--->");
             //System.out.print(traveler); *test* <-Traveler at this point
 
@@ -119,14 +108,11 @@ public class LinkedList<L> {
         }
         */
 
-
     /**
      * @return <L>
      */
-    public L removeFirst()
-    {
-        if (this.head == null)
-        {
+    public L removeFirst() {
+        if (this.head == null) {
             throw new IndexOutOfBoundsException();
         }
         /*
@@ -156,36 +142,28 @@ public class LinkedList<L> {
     }
 
     /**
-     * @param index
-     *     int
-     *
+     * @param index int
      * @return <L>
      */
-    public L removeAt(int index)
-    {
-        if (this.head == null)
-        {
+    public L removeAt(int index) {
+        if (this.head == null) {
             throw new IndexOutOfBoundsException();
         }
-        if (index < 0)
-        {
+        if (index < 0) {
             throw new IndexOutOfBoundsException();
         }
         Node<L> trailer = null;
         Node<L> traveler = this.head;
         int position = 0;
-        while (traveler != null && position != index)
-        {
+        while (traveler != null && position != index) {
             trailer = traveler;
             traveler = traveler.next;
             ++position;
         }
-        if (traveler == null)
-        {
+        if (traveler == null) {
             throw new IndexOutOfBoundsException();
         }
-        if (trailer == null)
-        {
+        if (trailer == null) {
             L value = this.head.value;
             this.head = this.head.next;
             return value;
@@ -196,18 +174,14 @@ public class LinkedList<L> {
         return value;
     }
 
-
     /**
      * @return <L>
      */
-    public L removeLast()
-    {
-        if (this.head == null)
-        {
+    public L removeLast() {
+        if (this.head == null) {
             throw new IndexOutOfBoundsException();
         }
-        if (this.head.next == null)
-        {
+        if (this.head.next == null) {
             /*
             int value = this.head.value;
             this.head = null;
@@ -217,8 +191,7 @@ public class LinkedList<L> {
         }
         // Find second to last Node
         Node<L> traveller = this.head;
-        while (traveller.next.next != null)
-        {
+        while (traveller.next.next != null) {
             traveller = traveller.next;
         }
         Node<L> secondToLastNode = traveller;
@@ -236,26 +209,21 @@ public class LinkedList<L> {
     /**
      * @return <L>
      */
-    public L removedLast2()
-    {
-        if (this.head == null)
-        {
+    public L removedLast2() {
+        if (this.head == null) {
             throw new IndexOutOfBoundsException();
         }
         Node<L> traveler = this.head;
         Node<L> trailer = null;
-        while (traveler.next != null)
-        {
+        while (traveler.next != null) {
             trailer = traveler;
             traveler = traveler.next;
         }
-        if (trailer == null)
-        {
+        if (trailer == null) {
             L value = traveler.value;
             this.head = null;
             return value;
-        } else
-        {
+        } else {
             L value = traveler.value;
             trailer.next = null;
             return value;
@@ -263,43 +231,79 @@ public class LinkedList<L> {
     }
 
     /**
-     * @param index
-     *     int
+     * Insert new value at index.
      *
-     * @return <L>
+     * @param value int
+     * @param index int
      */
-    public L insert(L value, int index)
-    {
-        if (this.head == null)
-        {
-            throw new IndexOutOfBoundsException("I'm still not sure where I'm going" + " wrong in this method.");
+    public void insert(L value, int index) {
+        int length = this.len();
+        // Check for invalid conditions.
+        if (0 == length) {
+            throw new IndexOutOfBoundsException("Linked list is empty");
+        }
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Index is < 0");
+        }
+        if (index > length) {
+            throw new IndexOutOfBoundsException("Index is > list length");
+        }
+        // Handle special case of index = 0.
+        if (0 == index) {
+            this.prepend(value);
+        } else {
+            // Need to find the Node before the index so new Node can be added to it's next pointer.
+            --index;
+            Node<L> current = this.head;
+            Node<L> nextNode = this.head.next;
+            int position = 0;
+            // Loop until just before insert point.
+            while (position < index) {
+                current = nextNode;
+                nextNode = nextNode.next;
+                ++position;
+            }
+            // Insert new Node value and link it with the old node that was at this position.
+            current.next = new Node<>(value, nextNode);
+        }
+//        Node<L> trailer = null;
+//        Node<L> traveler = this.head;
+//        int position = 0;
+//        while (traveler != null && position <= index)
+//        {
+//            trailer = traveler;
+//            traveler = traveler.next;
+//            ++position;
+//        }
+//        if (traveler == null)
+//        {
+//            throw new IndexOutOfBoundsException();
+//        }
+//        if (trailer == null)
+//        {
+//            value = this.head.value;
+//            this.head = this.head.next;
+//            return value;
+//        }
+//        value = traveler.value;
+//        trailer.next = traveler.next;
+//        return value;
+    }
 
+    /**
+     * Finds length of list.
+     *
+     * @return int
+     */
+    public int len() {
+        int count = 0;
+        if (this.head != null) {
+            Node<L> current = this.head;
+            do {
+                current = current.next;
+                ++count;
+            } while (current != null);
         }
-        if (index < 0)
-        {
-            throw new IndexOutOfBoundsException("INDEX IS < 0. ");
-        }
-        Node<L> trailer = null;
-        Node<L> traveler = this.head;
-        int position = 0;
-        while (traveler != null && position != index)
-        {
-            trailer = traveler;
-            traveler = traveler.next;
-            ++position;
-        }
-        if (traveler == null)
-        {
-            throw new IndexOutOfBoundsException();
-        }
-        if (trailer == null)
-        {
-            value = this.head.value;
-            this.head = this.head.next;
-            return value;
-        }
-        value = traveler.value;
-        trailer.next = traveler.next;
-        return value;
+        return count;
     }
 }
