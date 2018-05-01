@@ -26,6 +26,9 @@ public class LinkedList<L> {
         this.head = null;
     }
 
+    /**
+     * Stub for future randomizer method for insertAt() method
+     */
     public static void insertRandomizer()
     {
     }
