@@ -12,7 +12,7 @@
  * but I understand you chose L because it makes sense to you at this point
  * If Anything, for the future, use S Since this is a "second"
  * and this would keep better in naming conventions
- * * comment for elucidation on Generic Types - good form
+ * * comment requested  by me for elucidation on Generic Types - good form *
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
