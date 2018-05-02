@@ -16,6 +16,7 @@
  */
 @SuppressWarnings("WeakerAccess")
 public class LinkedList<L> {
+
     private Node<L> head;
 
     /**
@@ -88,7 +89,12 @@ public class LinkedList<L> {
     {
         int length = this.length();
         // Check for invalid conditions.
-        if (0 == length)
+
+        /*
+        Sometimes prints exception message before prior output
+        *****todo: CAN WE FIX THIS???****
+         */
+        if (0 == length && 0 != index)
         {
             throw new IndexOutOfBoundsException("Linked list is empty");
         }
@@ -96,15 +102,48 @@ public class LinkedList<L> {
         {
             throw new IndexOutOfBoundsException("Index is < 0");
         }
-        if (index > length)
+        if (length < index)
         {
             throw new IndexOutOfBoundsException("Index is > list length");
         }
+
         // Handle special case of index = 0.
-        if (0 == index)
+        if (0 != index) // I was taught to revers so if I just put = it will flag me first
         {
-            this.prepend(value);
+            // Needs to find the Parent Node before the index
+            // so new Node can be added to parent's next pointer.
+            --index; // This gets the value of the NODE AT THE INDEX of the node just before this index number
+            // I want the new node to be at.
+            // Initialization of vars for while loop.
+            Node<L> parentNode = this.head; //Initially it starts with the 1st node in LL and stuffs it's head value into var parentNode
+            Node<L> nextNode = this.head.next; // "" takes the ".next" value of parentNode and stuffs it into nextNode
+            int position = 0;
+            // Loop until just before insert point.
+            while (position < index)
+            {
+                parentNode = nextNode;
+                nextNode = nextNode.next;
+                ++position;
+            }
+            // Inserts new Node value and link it with the old node
+            // that was at this position.
+            parentNode.next = new Node<>(value, nextNode);
         } else
+        {
+            // This calls my prepend method to create a LL if index == null
+            this.prepend(value);
+        }
+
+        /*
+         * Another way to express the test:
+         * This takes the probability that you will
+         * most likely not hit an empty LinkedList
+         *
+         * So it tests and the THEN is run right away
+         * Will jump to ELSE if False
+         */
+        // Handle special case of index = 0.
+/*        if (0 != index) // I was taught to revers so if I just put = it will flag me first
         {
             // Needs to find the Node before the index
             // so new Node can be added to it's next pointer.
@@ -122,7 +161,14 @@ public class LinkedList<L> {
             // Inserts new Node value and link it with the old node
             // that was at this position.
             current.next = new Node<>(value, nextNode);
+        } else
+        {
+            // This calls my prepend method to create a LL if index == null
+            this.prepend(value);
         }
+*/
+
+
     }
 
     /**
@@ -132,7 +178,11 @@ public class LinkedList<L> {
      */
     public int length()
     {
+        /*
+        Creates new variable count to store value of next
+         */
         int count = 0;
+
         if (this.head != null)
         {
             Node<L> current = this.head;

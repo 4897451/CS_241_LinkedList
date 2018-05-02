@@ -75,24 +75,24 @@ public class Main {
          * Random for insertAt() method
          */
         System.out.println("\n* STARTING RANDOM INSERT AT INDEX *\n");
-        /**
+        /*
          * Stub for future randomizer method
          */
         ll.insertRandomizer();
 
         Random r = new Random();
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 5; i++)
         {
+            ll.print();
             System.out.println("LinkedList length = " + ll.length() + "\n");
             int value = r.nextInt(10);
-            int position = r.nextInt(i + 1);
+            int position = r.nextInt(6);
             System.out.println("Inserting value: " + "*" + value + "*" + " at index: " + position);
-            /**
+            /*
              * Calling insertAt() method
              */
             ll.insertAt(value, position);
-            ll.print();
         }
-        System.out.println("LinkedList length = " + ll.length());
+        System.out.println("Final LinkedList length = " + ll.length());
     }
 }
