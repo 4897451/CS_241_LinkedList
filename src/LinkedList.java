@@ -241,6 +241,7 @@ public class LinkedList<L> {
             }
             //System.out.print(traveler); //*test* <-Traveler at this point
         }
+        //System.out.print(traveler.getValue());
         System.out.println();
     }
 
