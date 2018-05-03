@@ -30,6 +30,7 @@ public class LinkedList<L> {
     /**
      * Stub for future randomizer method for insertAt() method
      */
+    // TODO: 5/3/2018 move randomizer out of main and into LL Class 
     public static void insertRandomizer()
     {
     }
@@ -96,15 +97,15 @@ public class LinkedList<L> {
          */
         if (0 == length && 0 != index)
         {
-            throw new IndexOutOfBoundsException("Linked list is empty");
+            throw new IndexOutOfBoundsException(" ** Linked list is empty ** ");
         }
         if (index < 0)
         {
-            throw new IndexOutOfBoundsException("Index is < 0");
+            throw new IndexOutOfBoundsException(" ** Index is < 0 ** ");
         }
         if (length < index)
         {
-            throw new IndexOutOfBoundsException("Index is > list length");
+            throw new IndexOutOfBoundsException(" ** Index is > list length ** ");
         }
 
         // Handle special case of index = 0.
@@ -189,6 +190,8 @@ public class LinkedList<L> {
             do
             {
                 current = current.next;
+                // ++ before because we're not using the value of count at this point
+                // we're only returning the value of count when the condition is false
                 ++count;
             } while (current != null);
         }
@@ -325,7 +328,7 @@ public class LinkedList<L> {
     {
         if (this.head == null)
         {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException(" * LinkedList Empty * ");
         }
         if (this.head.next == null)
         {
