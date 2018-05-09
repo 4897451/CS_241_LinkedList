@@ -1,7 +1,7 @@
 /*
  * Jonathan Jumper
  * CS241 JAVA II
- * Linked Lists *PREPEND*
+ * Linked Lists
  * 4-12-18
  */
 
@@ -75,13 +75,9 @@ public class Main {
          * Random for insertAt() method
          */
         System.out.println("\n* STARTING RANDOM INSERT AT INDEX *\n");
-        /*
-         * Stub for future randomizer method
-         */
-        ll.insertRandomizer();
-
         Random r = new Random();
-        for (int i = 0; i < 5; i++)
+        int i = 0, num = 5;
+        do
         {
             ll.print();
             System.out.println("LinkedList length = " + ll.length() + "\n");
@@ -91,8 +87,36 @@ public class Main {
             /*
              * Calling insertAt() method
              */
-            ll.insertAt(value, position);
-        }
+            try
+            {
+                ll.insertAt(value, position);
+            } catch (Exception e)
+            {
+                //TODO: whatever.
+                continue;
+            }
+            ++i;
+        } while (i < num);
+        ll.print();
         System.out.println("Final LinkedList length = " + ll.length());
+      /*  for (int i = 0; i < 5; i++)
+        {
+            ll.print();
+            System.out.println("LinkedList length = " + ll.length() + "\n");
+            int value = r.nextInt(10);
+            int position = r.nextInt(6);
+            System.out.println("Inserting value: " + "*" + value + "*" + " at index: " + position);
+            /*
+             * Calling insertAt() method
+             */
+          /*  try
+            {
+                ll.insertAt(value, position);
+            } catch (Exception e)
+            {
+                //TODO: whatever.
+            }
+        }*/
+        // System.out.println("Final LinkedList length = " + ll.length());
     }
 }

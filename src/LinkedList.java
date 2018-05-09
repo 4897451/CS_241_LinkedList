@@ -1,7 +1,7 @@
 /*
  * Jonathan Jumper
  * CS241 JAVA II
- * Linked Lists *PREPEND*
+ * Linked Lists
  * 4-11-18
  */
 
@@ -25,14 +25,6 @@ public class LinkedList<L> {
     public LinkedList()
     {
         this.head = null;
-    }
-
-    /**
-     * Stub for future randomizer method for insertAt() method
-     */
-    // TODO: 5/3/2018 move randomizer out of main and into LL Class 
-    public static void insertRandomizer()
-    {
     }
 
     /**
@@ -91,10 +83,6 @@ public class LinkedList<L> {
         int length = this.length();
         // Check for invalid conditions.
 
-        /*
-        Sometimes prints exception message before prior output
-        *****todo: CAN WE FIX THIS???****
-         */
         if (0 == length && 0 != index)
         {
             throw new IndexOutOfBoundsException(" ** Linked list is empty ** ");
@@ -109,7 +97,7 @@ public class LinkedList<L> {
         }
 
         // Handle special case of index = 0.
-        if (0 != index) // I was taught to revers so if I just put = it will flag me first
+        if (0 != index) // I was taught to reverse so if I just put = it will flag me first
         {
             // Needs to find the Parent Node before the index
             // so new Node can be added to parent's next pointer.
@@ -134,41 +122,6 @@ public class LinkedList<L> {
             // This calls my prepend method to create a LL if index == null
             this.prepend(value);
         }
-
-        /*
-         * Another way to express the test:
-         * This takes the probability that you will
-         * most likely not hit an empty LinkedList
-         *
-         * So it tests and the THEN is run right away
-         * Will jump to ELSE if False
-         */
-        // Handle special case of index = 0.
-/*        if (0 != index) // I was taught to revers so if I just put = it will flag me first
-        {
-            // Needs to find the Node before the index
-            // so new Node can be added to it's next pointer.
-            --index;
-            Node<L> current = this.head;
-            Node<L> nextNode = this.head.next;
-            int position = 0;
-            // Loop until just before insert point.
-            while (position < index)
-            {
-                current = nextNode;
-                nextNode = nextNode.next;
-                ++position;
-            }
-            // Inserts new Node value and link it with the old node
-            // that was at this position.
-            current.next = new Node<>(value, nextNode);
-        } else
-        {
-            // This calls my prepend method to create a LL if index == null
-            this.prepend(value);
-        }
-*/
-
 
     }
 
@@ -235,10 +188,6 @@ public class LinkedList<L> {
             //System.out.print(traveler); //*test* <-Traveler at this point
             System.out.print("");
             traveler = traveler.getNext();
-            if (traveler == null)
-            {
-                System.out.print(traveler);
-            }
             //System.out.print(traveler); //*test* <-Traveler at this point
         }
         //System.out.print(traveler.getValue());
@@ -333,11 +282,6 @@ public class LinkedList<L> {
         }
         if (this.head.next == null)
         {
-            /*
-            int value = this.head.value;
-            this.head = null;
-            return value;
-            */
             return this.removeFirst();
         }
         // Find second to last Node
@@ -358,32 +302,4 @@ public class LinkedList<L> {
         return value;
     }
 
-    /**
-     * @return <L>
-     */
-    public L removedLast2()
-    {
-        if (this.head == null)
-        {
-            throw new IndexOutOfBoundsException();
-        }
-        Node<L> traveler = this.head;
-        Node<L> trailer = null;
-        while (traveler.next != null)
-        {
-            trailer = traveler;
-            traveler = traveler.next;
-        }
-        if (trailer == null)
-        {
-            L value = traveler.value;
-            this.head = null;
-            return value;
-        } else
-        {
-            L value = traveler.value;
-            trailer.next = null;
-            return value;
-        }
-    }
 }

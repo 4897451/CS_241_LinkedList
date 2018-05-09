@@ -1,11 +1,11 @@
 /*
  * Jonathan Jumper
  * CS241 JAVA II
- * Linked Lists *PREPEND*
+ * Linked Lists
  * 4-12-18
  */
 
-/*
+/**
  * NODE CLASS
  */
 
