@@ -83,13 +83,13 @@ public class Main {
             System.out.println("LinkedList length = " + ll.length() + "\n");
             int value = r.nextInt(10);
             int position = r.nextInt(6);
-            System.out.println("Inserting value: " + "*" + value + "*" + " at index: " + position);
+            System.out.println("Inserting value: " + "*" + value * 111 + "*" + " at index: " + position);
             /*
              * Calling insertAt() method
              */
             try
             {
-                ll.insertAt(value, position);
+                ll.insertAt(value * 111, position);
             } catch (Exception e)
             {
                 //TODO: whatever. Exception is held with a try/catch
