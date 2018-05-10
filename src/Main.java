@@ -92,7 +92,8 @@ public class Main {
                 ll.insertAt(value, position);
             } catch (Exception e)
             {
-                //TODO: whatever.
+                //TODO: whatever. Exception is held with a try/catch
+                // (will continue until random has legal index value)
                 continue;
             }
             ++i;
@@ -114,7 +115,7 @@ public class Main {
                 ll.insertAt(value, position);
             } catch (Exception e)
             {
-                //TODO: whatever.
+                //TODO: whatever. Converted this for loop to do/while loop with try catch
             }
         }*/
         // System.out.println("Final LinkedList length = " + ll.length());
